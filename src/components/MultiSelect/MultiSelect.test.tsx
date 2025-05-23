@@ -59,18 +59,12 @@ describe('MultiSelect Component', () => {
             />
         );
 
-        // Open dropdown
         fireEvent.click(screen.getByText('Test placeholder'));
-        
-        // Type in the input field
         const input = screen.getByPlaceholderText('Type and press Enter to add...');
         fireEvent.change(input, { target: { value: 'New Option' } });
-        
-        // Press Enter
         fireEvent.keyDown(input, { key: 'Enter' });
-          // Verify onChange was called with a new option
         expect(mockOnChange).toHaveBeenCalled();
-        const calledWith = mockOnChange.mock.calls[0][0][0]; // Get the first option from the first call
+        const calledWith = mockOnChange.mock.calls[0][0][0];
         expect(calledWith.label).toBe('New Option');
         expect(calledWith.icon).toBe('✨');
     });
