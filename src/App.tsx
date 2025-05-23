@@ -4,7 +4,7 @@ import './App.css';
 
 // Sample initial options with emojis
 const initialOptions = [
-  { id: '1', label: 'science', icon: '🧬' }, 
+  { id: '1', label: 'Science', icon: '🧬' }, 
   { id: '2', label: 'Education', icon: '🎓' },
   { id: '3', label: 'Art', icon: '🎨' },
   { id: '4', label: 'Sport', icon: '⚽' },

@@ -8,6 +8,8 @@
 
     // Main dropdown title
     &__title {
+        display: flex;
+        align-items: center;
         font-size: 15px;
         color: #333;
     }
@@ -59,6 +61,11 @@
     &__separator {
         color: #4285f4;
         font-weight: 500;
+    }
+
+    // Emoji icon
+    &__emoji {
+        font-size: 16px;
     }
 
     // Placeholder text
@@ -124,7 +131,9 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 10px 16px;
+        margin: 0 8px;
+        border-radius: 6px;
+        padding: 10px 8px;
         position: relative;
 
         // Text styling
@@ -133,7 +142,7 @@
         cursor: pointer;
 
         // Hover effect
-        &:hover {
+        &:hover:not(.selected) {
             background: #f8f9fa;
         }
 
@@ -143,19 +152,7 @@
             color: #4285f4;
             font-weight: 500;
             background: #edf6ff;
-            margin: 0 8px;
-            border-radius: 6px;
-            padding: 10px 8px;
         }
-    }
-
-    // Emoji container
-    &__emoji {
-        font-size: 18px;
-        min-width: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     // Checkmark for selected items

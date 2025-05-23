@@ -116,7 +116,10 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                     {selectedOptions.length === 0 ? (
                         <span className="multi-select__placeholder">{placeholder}</span>
                     ) : (
-                        renderOptionLabel(selectedOptions[0])
+                        <>
+                            {renderOptionLabel(selectedOptions[0])}
+                            {/* <span className="multi-select__emoji">{selectedOptions[0].icon}</span> */}
+                        </>
                     )}
                 </div>
                 <span className={`multi-select__arrow ${isOpen ? 'open' : ''}`}>▼</span>
@@ -147,13 +150,13 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                                 }`}
                                 onClick={() => toggleOption(option)}
                             >
-                                {/* Option emoji */}
+                                {/* Option label with "Yeeeah" prefix if selected */}
+                                {renderOptionLabel(option, true)}
+                                
+                                {/* Option emoji at the end */}
                                 <span className="multi-select__emoji">
                                     {option.icon}
                                 </span>
-                                
-                                {/* Option label with "Yeeeah" prefix if selected */}
-                                {renderOptionLabel(option, true)}
                                 
                                 {/* Checkmark for selected option */}
                                 {selectedOptions.some(
